@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - CRLM LT Clinical Resource</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CRLM LT Resource</div>
+            <div class="nav-search-container">
+                <form id="searchForm" class="search-form" onsubmit="performSearchSubmit(event)">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search resources..." autocomplete="off">
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="overview.html">Overview</a></li>
+                <li><a href="selection-criteria.html">Selection Criteria</a></li>
+                <li><a href="outcomes.html">Clinical Outcomes</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="case-studies.html">Cases</a></li>
+                <li><a href="bridging-therapy.html">Bridging Therapy</a></li>
+                <li><a href="lt-vs-resection.html">LT vs Resection</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / Search Results
+            </div>
+
+            <h1>Search Results</h1>
+
+            <div class="search-container">
+                <form id="mainSearchForm" class="main-search-form" onsubmit="performSearchSubmit(event)">
+                    <input type="text" id="mainSearchInput" class="main-search-input" placeholder="Search the entire resource..." autocomplete="off">
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+            </div>
+
+            <div id="searchResults" class="search-results">
+                <!-- Results will be populated here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CRLM LT Clinical Resource. Evidence-based information for transplant teams.</p>
+            <p class="author"><strong>Created by:</strong> Tor Magnus Smedman, MD PhD | Transplant Oncology Research Group, Oslo University Hospital</p>
+            <p class="disclaimer">This resource is for educational purposes. Clinical decisions should be made in consultation with a multidisciplinary team.</p>
+        </div>
+    </footer>
+
+    <script src="../js/search-index.js"></script>
+    <script src="../js/search.js"></script>
+</body>
+</html>

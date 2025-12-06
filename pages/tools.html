@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Tools - CRLM LT Clinical Resource</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CRLM LT Resource</div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="overview.html">Overview</a></li>
+                <li><a href="selection-criteria.html">Selection Criteria</a></li>
+                <li><a href="outcomes.html">Clinical Outcomes</a></li>
+                <li><a href="tools.html" class="active">Tools</a></li>
+                <li><a href="lt-vs-resection.html">LT vs Resection</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / Interactive Tools
+            </div>
+
+            <h1>Interactive Clinical Tools</h1>
+
+            <section class="section">
+                <p>Use these interactive tools to calculate prognostic scores and assess patient eligibility for liver transplantation in colorectal liver metastases. All calculations are performed locally in your browser and no data is stored or transmitted.</p>
+            </section>
+
+            <!-- Oslo Score Calculator -->
+            <section class="section">
+                <h2>Oslo Score Calculator</h2>
+                
+                <div class="calculator-box">
+                    <p>The Oslo Score is a validated prognostic tool specifically developed for predicting outcomes after liver transplantation in patients with unresectable colorectal liver metastases. Calculate your patient's score below.</p>
+
+                    <form id="oslo-form" class="calculator-form">
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="oslo-tumor-size" name="tumor-size">
+                                <span class="checkbox-text">Largest tumor size ≥ 5.5 cm</span>
+                            </label>
+                            <p class="form-help">Maximum diameter of the largest metastatic lesion on imaging</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="oslo-progressive" name="progressive-disease">
+                                <span class="checkbox-text">Progressive disease on chemotherapy</span>
+                            </label>
+                            <p class="form-help">Disease progression despite systemic therapy at time of evaluation</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="oslo-cea" name="cea-level">
+                                <span class="checkbox-text">Plasma CEA > 80 µg/L</span>
+                            </label>
+                            <p class="form-help">Carcinoembryonic antigen level at time of transplant evaluation</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="oslo-time" name="time-interval">
+                                <span class="checkbox-text">Time from primary resection to LT < 2 years</span>
+                            </label>
+                            <p class="form-help">Interval between primary tumor surgery and transplant evaluation</p>
+                        </div>
+
+                        <button type="button" class="calc-button" onclick="calculateOsloScore()">Calculate Oslo Score</button>
+                    </form>
+
+                    <div id="oslo-result" class="result-box" style="display:none;">
+                        <div class="result-header">
+                            <h3>Oslo Score Result</h3>
+                        </div>
+                        <div class="result-content">
+                            <div class="score-display">
+                                <div class="score-number" id="oslo-score-number">0</div>
+                                <div class="score-label">out of 4</div>
+                            </div>
+                            <div class="score-interpretation" id="oslo-interpretation"></div>
+                            <div class="score-outcomes" id="oslo-outcomes"></div>
+                        </div>
+                        <button type="button" class="print-button" onclick="printResult('oslo')">Print Result</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FCRS Calculator -->
+            <section class="section">
+                <h2>Fong Clinical Risk Score (FCRS) Calculator</h2>
+                
+                <div class="calculator-box">
+                    <p>The Fong Clinical Risk Score was originally developed for liver resection but has been validated for predicting outcomes after liver transplantation in CRLM. Calculate your patient's score below.</p>
+
+                    <form id="fcrs-form" class="calculator-form">
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="fcrs-node" name="node-positive">
+                                <span class="checkbox-text">Node-positive primary tumor</span>
+                            </label>
+                            <p class="form-help">Presence of lymph node involvement in the primary colorectal cancer</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="fcrs-dfi" name="disease-free-interval">
+                                <span class="checkbox-text">Disease-free interval < 12 months</span>
+                            </label>
+                            <p class="form-help">Time from primary tumor resection to first metastasis detection</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="fcrs-multiple" name="multiple-tumors">
+                                <span class="checkbox-text">More than 1 liver tumor</span>
+                            </label>
+                            <p class="form-help">Presence of multiple metastatic lesions in the liver</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="fcrs-cea" name="cea-high">
+                                <span class="checkbox-text">Preoperative CEA > 200 ng/mL</span>
+                            </label>
+                            <p class="form-help">Carcinoembryonic antigen level (higher threshold than Oslo Score)</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="fcrs-size" name="tumor-size-large">
+                                <span class="checkbox-text">Size of largest tumor > 5 cm</span>
+                            </label>
+                            <p class="form-help">Maximum diameter of the largest metastatic lesion</p>
+                        </div>
+
+                        <button type="button" class="calc-button" onclick="calculateFCRS()">Calculate FCRS</button>
+                    </form>
+
+                    <div id="fcrs-result" class="result-box" style="display:none;">
+                        <div class="result-header">
+                            <h3>FCRS Result</h3>
+                        </div>
+                        <div class="result-content">
+                            <div class="score-display">
+                                <div class="score-number" id="fcrs-score-number">0</div>
+                                <div class="score-label">out of 5</div>
+                            </div>
+                            <div class="score-interpretation" id="fcrs-interpretation"></div>
+                            <div class="score-outcomes" id="fcrs-outcomes"></div>
+                        </div>
+                        <button type="button" class="print-button" onclick="printResult('fcrs')">Print Result</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Score Comparison -->
+            <section class="section">
+                <h2>Score Comparison</h2>
+                
+                <div class="comparison-box">
+                    <p>Compare your patient's Oslo Score and FCRS results side-by-side:</p>
+                    <button type="button" class="calc-button" onclick="compareScores()">Compare Scores</button>
+                </div>
+
+                <div id="comparison-result" class="result-box" style="display:none;">
+                    <table class="data-table">
+                        <tr>
+                            <th>Scoring System</th>
+                            <th>Score</th>
+                            <th>Risk Category</th>
+                            <th>5-Year OS</th>
+                        </tr>
+                        <tr id="oslo-comparison-row">
+                            <td><strong>Oslo Score</strong></td>
+                            <td id="oslo-comp-score">—</td>
+                            <td id="oslo-comp-risk">—</td>
+                            <td id="oslo-comp-os">—</td>
+                        </tr>
+                        <tr id="fcrs-comparison-row">
+                            <td><strong>FCRS</strong></td>
+                            <td id="fcrs-comp-score">—</td>
+                            <td id="fcrs-comp-risk">—</td>
+                            <td id="fcrs-comp-os">—</td>
+                        </tr>
+                    </table>
+                    <div class="comparison-note">
+                        <p><strong>Interpretation:</strong> <span id="comparison-interpretation"></span></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Decision Support Tool -->
+            <section class="section">
+                <h2>Patient Selection Decision Support</h2>
+                
+                <div class="decision-box">
+                    <p>Use this tool to systematically assess patient eligibility for liver transplantation in CRLM. Answer the following questions to receive a recommendation.</p>
+                    
+                    <form id="decision-form" class="decision-form">
+                        <div class="decision-group">
+                            <h3>Exclusion Criteria Assessment</h3>
+                            
+                            <div class="form-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="braf-status" value="yes">
+                                    <span>BRAF V600E mutation present</span>
+                                </label>
+                                <p class="form-help">Absolute exclusion criterion</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="braf-status" value="no" checked>
+                                    <span>BRAF V600E mutation absent or wild-type</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="extrahepatic" value="yes">
+                                    <span>Extrahepatic metastases present</span>
+                                </label>
+                                <p class="form-help">Exclusion criterion (except prior resected pulmonary metastases)</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="extrahepatic" value="no" checked>
+                                    <span>No extrahepatic metastases</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="msi-status" value="yes">
+                                    <span>Microsatellite instability or mismatch repair deficiency</span>
+                                </label>
+                                <p class="form-help">Exclusion criterion</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="msi-status" value="no" checked>
+                                    <span>Microsatellite stable and mismatch repair proficient</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="decision-group">
+                            <h3>Risk Stratification</h3>
+                            
+                            <div class="form-group">
+                                <label for="oslo-input">Oslo Score:</label>
+                                <select id="oslo-input" name="oslo-score">
+                                    <option value="">Select Oslo Score</option>
+                                    <option value="0">0 (Favorable)</option>
+                                    <option value="1">1 (Favorable)</option>
+                                    <option value="2">2 (Intermediate)</option>
+                                    <option value="3">3 (Unfavorable)</option>
+                                    <option value="4">4 (Unfavorable)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pet-input">PET-MTV (cm³):</label>
+                                <input type="number" id="pet-input" name="pet-mtv" placeholder="Enter PET-MTV value" min="0">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ras-tp53-input">RAS/TP53 Co-mutations:</label>
+                                <select id="ras-tp53-input" name="ras-tp53">
+                                    <option value="">Select status</option>
+                                    <option value="no">Absent (favorable)</option>
+                                    <option value="yes">Present (unfavorable)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="button" class="calc-button" onclick="assessPatientEligibility()">Assess Eligibility</button>
+                    </form>
+
+                    <div id="eligibility-result" class="result-box" style="display:none;">
+                        <div class="result-header">
+                            <h3 id="eligibility-title"></h3>
+                        </div>
+                        <div class="result-content">
+                            <div class="eligibility-recommendation" id="eligibility-recommendation"></div>
+                            <div class="eligibility-details" id="eligibility-details"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section call-to-action">
+                <h2>Next Steps</h2>
+                <p>After using these tools, review the <a href="selection-criteria.html">Selection Criteria</a> page for detailed information about each scoring system, or consult the <a href="resources.html">Resources</a> page for guidelines and references.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CRLM LT Clinical Resource. Evidence-based information for transplant teams.</p>
+            <p class="author"><strong>Created by:</strong> Tor Magnus Smedman, MD PhD | Transplant Oncology Research Group, Oslo University Hospital</p>
+            <p class="disclaimer">This resource is for educational purposes. Clinical decisions should be made in consultation with a multidisciplinary team.</p>
+        </div>
+    </footer>
+
+    <script src="../js/tools.js"></script>
+</body>
+</html>

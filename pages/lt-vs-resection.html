@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LT vs Resection - CRLM LT Clinical Resource</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CRLM LT Resource</div>
+            <div class="nav-search-container">
+                <form class="search-form" onsubmit="handleNavSearchSubmit(event)">
+                    <input type="text" class="search-input" placeholder="Search..." autocomplete="off">
+                    <button type="submit" class="search-button">Go</button>
+                </form>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="overview.html">Overview</a></li>
+                <li><a href="selection-criteria.html">Selection Criteria</a></li>
+                <li><a href="outcomes.html">Clinical Outcomes</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="case-studies.html">Cases</a></li>
+                <li><a href="bridging-therapy.html">Bridging Therapy</a></li>
+                <li><a href="lt-vs-resection.html" class="active">LT vs Resection</a></li>
+                <li><a href="lt-vs-resection.html">LT vs Resection</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / LT vs Resection
+            </div>
+
+            <h1>Liver Transplantation vs Resection for Colorectal Liver Metastases: A Comparative Analysis</h1>
+
+            <section class="section">
+                <p>This page provides a comprehensive comparison of liver transplantation (LT) and surgical resection for patients with colorectal liver metastases (CRLM). While resection remains the standard of care for resectable disease, LT offers a curative option for carefully selected patients with unresectable CRLM. Understanding the comparative outcomes is essential for optimal patient selection and treatment planning.</p>
+            </section>
+
+            <!-- Overview of Treatment Modalities -->
+            <section class="section">
+                <h2>Overview of Treatment Modalities</h2>
+
+                <div class="comparison-table">
+                    <h3>Treatment Approach Characteristics</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>Feature</th>
+                            <th>Liver Resection</th>
+                            <th>Liver Transplantation</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Indications</strong></td>
+                            <td>Resectable CRLM (adequate FLR, vascular involvement manageable)</td>
+                            <td>Unresectable CRLM (liver-only disease, no extrahepatic metastases)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Disease Burden</strong></td>
+                            <td>Variable (can accommodate extensive disease with PVE)</td>
+                            <td>Extensive disease acceptable if prognostic factors favorable</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Operative Risk</strong></td>
+                            <td>Lower (hepatic resection)</td>
+                            <td>Higher (major surgery + immunosuppression)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Long-term Commitment</strong></td>
+                            <td>None (no immunosuppression)</td>
+                            <td>Lifelong immunosuppression required</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Organ Allocation</strong></td>
+                            <td>N/A</td>
+                            <td>Requires donor organ; ethical considerations</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Overall Survival Comparison -->
+            <section class="section">
+                <h2>Overall Survival Outcomes</h2>
+
+                <p>The following data compares overall survival (OS) between LT and resection for patients with CRLM, derived from the landmark Dueland comparative effectiveness study and other major trials.</p>
+
+                <h3>Overall Survival by Treatment Modality</h3>
+
+                <div class="comparison-table">
+                    <table class="data-table">
+                        <tr>
+                            <th>Treatment Group</th>
+                            <th>N</th>
+                            <th>Median OS (months)</th>
+                            <th>5-Year OS (%)</th>
+                            <th>10-Year OS (%)</th>
+                        </tr>
+                        <tr class="favorable">
+                            <td><strong>LT - All Patients</strong></td>
+                            <td>50</td>
+                            <td>Not reached</td>
+                            <td>56-73</td>
+                            <td>40-50</td>
+                        </tr>
+                        <tr class="favorable">
+                            <td><strong>LT - Low Tumor Load (LTL)</strong></td>
+                            <td>21</td>
+                            <td>Not reached</td>
+                            <td>72.4</td>
+                            <td>~60</td>
+                        </tr>
+                        <tr class="intermediate">
+                            <td><strong>LT - High Tumor Load (HTL)</strong></td>
+                            <td>29</td>
+                            <td>59.9-68.0</td>
+                            <td>33.4</td>
+                            <td>~25</td>
+                        </tr>
+                        <tr class="intermediate">
+                            <td><strong>Resection After PVE - All Patients</strong></td>
+                            <td>38</td>
+                            <td>43.9</td>
+                            <td>44.6</td>
+                            <td>~20</td>
+                        </tr>
+                        <tr class="intermediate">
+                            <td><strong>Resection After PVE - Low Tumor Load</strong></td>
+                            <td>23</td>
+                            <td>Not specified</td>
+                            <td>69.3</td>
+                            <td>~35</td>
+                        </tr>
+                        <tr class="unfavorable">
+                            <td><strong>Resection After PVE - High Tumor Load</strong></td>
+                            <td>8</td>
+                            <td>29.8</td>
+                            <td>6.7</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unfavorable">
+                            <td><strong>PVE Only (No Resection)</strong></td>
+                            <td>15</td>
+                            <td>10.9</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p><strong>Key Observations:</strong> LT for patients with low tumor load achieves superior 5-year OS (72.4%) compared to resection after PVE (69.3%), with comparable outcomes. However, for patients with high tumor load, LT (33.4% 5-year OS) substantially outperforms resection after PVE (6.7% 5-year OS), representing a 5-fold survival advantage.</p>
+            </section>
+
+            <!-- Survival by Primary Tumor Location -->
+            <section class="section">
+                <h2>Survival Outcomes by Primary Tumor Location</h2>
+
+                <p>Primary tumor location (left-sided vs right-sided) significantly impacts outcomes after both LT and resection. Left-sided primaries (descending colon, sigmoid, rectum) have been associated with better prognosis after LT.</p>
+
+                <div class="comparison-table">
+                    <h3>5-Year Overall Survival by Primary Tumor Location</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>Treatment Group</th>
+                            <th>Primary Location</th>
+                            <th>N</th>
+                            <th>5-Year OS (%)</th>
+                            <th>Median OS (months)</th>
+                        </tr>
+                        <tr class="favorable">
+                            <td><strong>LT - High Tumor Load</strong></td>
+                            <td>Left-sided</td>
+                            <td>~15</td>
+                            <td>45.3</td>
+                            <td>59.9</td>
+                        </tr>
+                        <tr class="intermediate">
+                            <td><strong>LT - High Tumor Load</strong></td>
+                            <td>Right-sided</td>
+                            <td>~14</td>
+                            <td>~25</td>
+                            <td>~40</td>
+                        </tr>
+                        <tr class="unfavorable">
+                            <td><strong>Resection After PVE - High Tumor Load</strong></td>
+                            <td>Left-sided</td>
+                            <td>~4</td>
+                            <td>12.5</td>
+                            <td>~15</td>
+                        </tr>
+                        <tr class="unfavorable">
+                            <td><strong>Resection After PVE - High Tumor Load</strong></td>
+                            <td>Right-sided</td>
+                            <td>~4</td>
+                            <td>~5</td>
+                            <td>~10</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p><strong>Clinical Significance:</strong> Among patients with high tumor load and left-sided primary tumors, LT achieves 45.3% 5-year OS compared to 12.5% with resection after PVE—a 3.6-fold survival advantage. This subgroup represents ideal candidates for LT.</p>
+            </section>
+
+            <!-- Disease-Free Survival and Recurrence -->
+            <section class="section">
+                <h2>Disease-Free Survival and Recurrence Patterns</h2>
+
+                <p>While OS is the primary outcome measure, disease-free survival (DFS) and recurrence patterns differ significantly between LT and resection, with important clinical implications.</p>
+
+                <h3>Disease-Free Survival Comparison</h3>
+
+                <div class="comparison-table">
+                    <table class="data-table">
+                        <tr>
+                            <th>Outcome</th>
+                            <th>Liver Transplantation</th>
+                            <th>Liver Resection</th>
+                        </tr>
+                        <tr>
+                            <td><strong>1-Year DFS</strong></td>
+                            <td>35-40%</td>
+                            <td>45-55%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3-Year DFS</strong></td>
+                            <td>25-30%</td>
+                            <td>30-40%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Recurrence Rate</strong></td>
+                            <td>78-90% (majority indolent)</td>
+                            <td>70-80% (more aggressive)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Median Time to Recurrence</strong></td>
+                            <td>6-12 months</td>
+                            <td>6-18 months</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Median OS After Recurrence</strong></td>
+                            <td>37.1 months (indolent course)</td>
+                            <td>15-20 months (more aggressive)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>The Recurrence Paradox in LT</h3>
+
+                <p>A unique phenomenon in LT for CRLM is the <strong>recurrence paradox</strong>: despite nearly universal recurrence (78-90%), overall survival remains excellent due to the indolent nature of recurrent disease. This contrasts sharply with resection, where recurrence is associated with more aggressive disease progression and shorter survival after relapse.</p>
+
+                <div class="highlight-box">
+                    <h4>Understanding the Recurrence Paradox</h4>
+                    <p><strong>LT Advantage:</strong> Total hepatectomy removes the entire liver, eliminating the primary tumor burden. Recurrent disease typically appears in distant sites (lungs, peritoneum) and follows a slower, more manageable course. Median OS after recurrence is 37.1 months, allowing for aggressive salvage therapy.</p>
+                    <p><strong>Resection Disadvantage:</strong> Partial hepatectomy leaves residual liver tissue that may harbor micrometastases. Recurrent disease is often more aggressive and biologically similar to the original tumor. Median OS after recurrence is 15-20 months.</p>
+                </div>
+
+                <h3>Sites of Recurrence</h3>
+
+                <div class="comparison-table">
+                    <table class="data-table">
+                        <tr>
+                            <th>Site of Recurrence</th>
+                            <th>LT (%)</th>
+                            <th>Resection (%)</th>
+                        </tr>
+                        <tr>
+                            <td>Pulmonary metastases</td>
+                            <td>40-50</td>
+                            <td>35-45</td>
+                        </tr>
+                        <tr>
+                            <td>Peritoneal disease</td>
+                            <td>20-30</td>
+                            <td>15-25</td>
+                        </tr>
+                        <tr>
+                            <td>Distant metastases (other sites)</td>
+                            <td>10-20</td>
+                            <td>15-25</td>
+                        </tr>
+                        <tr>
+                            <td>Graft recurrence (liver)</td>
+                            <td>10-15</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>Local recurrence</td>
+                            <td>Rare</td>
+                            <td>5-10</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p><strong>Clinical Implication:</strong> LT patients have predominantly extrahepatic recurrence (pulmonary, peritoneal), which may be amenable to surgical resection or other aggressive therapies. Resection patients have higher rates of local recurrence and more aggressive disease biology.</p>
+            </section>
+
+            <!-- Tumor Burden Score Analysis -->
+            <section class="section">
+                <h2>Tumor Burden Score (TBS) and Prognostic Stratification</h2>
+
+                <p>The Tumor Burden Score integrates tumor size and number to predict prognosis. This analysis demonstrates how TBS differs between LT and resection cohorts and influences outcomes.</p>
+
+                <div class="comparison-table">
+                    <h3>Tumor Burden Score Distribution</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>TBS Zone</th>
+                            <th>Score Range</th>
+                            <th>LT Cohort (%)</th>
+                            <th>Resection Cohort (%)</th>
+                            <th>Prognostic Significance</th>
+                        </tr>
+                        <tr class="favorable">
+                            <td>Zone 1</td>
+                            <td>&lt; 2.4</td>
+                            <td>~10</td>
+                            <td>~15</td>
+                            <td>Excellent prognosis</td>
+                        </tr>
+                        <tr class="intermediate">
+                            <td>Zone 2</td>
+                            <td>2.4-4.71</td>
+                            <td>~30</td>
+                            <td>~45</td>
+                            <td>Good prognosis</td>
+                        </tr>
+                        <tr class="intermediate">
+                            <td>Zone 3</td>
+                            <td>4.71-9.0</td>
+                            <td>~35</td>
+                            <td>~30</td>
+                            <td>Intermediate prognosis</td>
+                        </tr>
+                        <tr class="unfavorable">
+                            <td>Zone 4</td>
+                            <td>&gt; 9.0</td>
+                            <td>~25</td>
+                            <td>~10</td>
+                            <td>Poor prognosis</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p><strong>Key Finding:</strong> LT cohorts typically have higher TBS (mean 17.7 in HTL-LT group vs 11.0 in HTL-PVE group), reflecting the selection of patients with more extensive disease for transplantation. Despite higher disease burden, LT achieves superior survival, suggesting that careful patient selection based on prognostic factors (Oslo Score, FCRS, PET-MTV) can overcome the apparent disadvantage of higher tumor burden.</p>
+            </section>
+
+            <!-- Comparative Outcomes Summary -->
+            <section class="section">
+                <h2>Comparative Outcomes Summary</h2>
+
+                <div class="highlight-box">
+                    <h3>When LT Outperforms Resection</h3>
+                    <ul>
+                        <li><strong>High Tumor Load:</strong> LT 5-year OS 33.4% vs Resection 6.7% (5-fold advantage)</li>
+                        <li><strong>Left-Sided Primaries with HTL:</strong> LT 45.3% vs Resection 12.5% (3.6-fold advantage)</li>
+                        <li><strong>Extensive Intrahepatic Disease:</strong> LT removes entire tumor burden; resection may leave micrometastases</li>
+                        <li><strong>Indolent Recurrence Pattern:</strong> LT recurrence is more manageable; median OS after relapse 37.1 months</li>
+                        <li><strong>Extrahepatic Recurrence:</strong> Predominantly pulmonary and peritoneal, amenable to salvage therapy</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>When Resection is Superior</h4>
+                    <ul>
+                        <li><strong>Low Tumor Load:</strong> Comparable outcomes (LT 72.4% vs Resection 69.3% 5-year OS)</li>
+                        <li><strong>Resectable Disease:</strong> Avoids need for immunosuppression and organ allocation</li>
+                        <li><strong>Better Short-term DFS:</strong> Resection achieves better 1-year DFS (45-55% vs 35-40%)</li>
+                        <li><strong>Lower Operative Risk:</strong> Hepatic resection safer than transplantation</li>
+                        <li><strong>No Immunosuppression Burden:</strong> Avoids long-term immunosuppressive therapy complications</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Patient Selection Framework -->
+            <section class="section">
+                <h2>Patient Selection Framework: LT vs Resection</h2>
+
+                <p>The following framework helps guide treatment selection for patients with CRLM:</p>
+
+                <div class="comparison-table">
+                    <h3>Treatment Selection Algorithm</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>Clinical Scenario</th>
+                            <th>Recommended Treatment</th>
+                            <th>Rationale</th>
+                        </tr>
+                        <tr class="favorable">
+                            <td><strong>Resectable CRLM, Low Tumor Load</strong></td>
+                            <td>Liver Resection</td>
+                            <td>Comparable OS (69-72%), avoids immunosuppression, lower operative risk</td>
+                        </tr>
+                        <tr class="favorable">
+                            <td><strong>Unresectable CRLM, Low Tumor Load, Favorable Prognostic Factors</strong></td>
+                            <td>Liver Transplantation</td>
+                            <td>72.4% 5-year OS, curative intent, excellent long-term outcomes</td>
+                        </tr>
+                        <tr class="favorable">
+                            <td><strong>Unresectable CRLM, High Tumor Load, Left-Sided Primary</strong></td>
+                            <td>Liver Transplantation</td>
+                            <td>45.3% 5-year OS, 3.6-fold advantage over resection (12.5%)</td>
+                        </tr>
+                        <tr class="intermediate">
+                            <td><strong>Unresectable CRLM, High Tumor Load, Right-Sided Primary</strong></td>
+                            <td>Liver Transplantation (with caution)</td>
+                            <td>25% 5-year OS, still superior to resection (~5%), but lower than left-sided</td>
+                        </tr>
+                        <tr class="intermediate">
+                            <td><strong>Resectable CRLM, Marginal FLR Requiring PVE</strong></td>
+                            <td>Resection after PVE</td>
+                            <td>44.6% 5-year OS, avoids immunosuppression if adequate response</td>
+                        </tr>
+                        <tr class="unfavorable">
+                            <td><strong>Unresectable CRLM, Extrahepatic Metastases</strong></td>
+                            <td>Systemic Chemotherapy</td>
+                            <td>LT contraindicated; focus on disease control and palliative care</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Cost-Effectiveness Considerations -->
+            <section class="section">
+                <h2>Cost-Effectiveness and Resource Allocation</h2>
+
+                <p>Beyond clinical outcomes, cost-effectiveness and ethical considerations regarding organ allocation are important factors in treatment selection.</p>
+
+                <div class="comparison-table">
+                    <table class="data-table">
+                        <tr>
+                            <th>Consideration</th>
+                            <th>Liver Resection</th>
+                            <th>Liver Transplantation</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Initial Hospitalization Cost</strong></td>
+                            <td>$50,000-$100,000</td>
+                            <td>$300,000-$500,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Annual Follow-up Cost</strong></td>
+                            <td>$5,000-$10,000</td>
+                            <td>$15,000-$25,000 (immunosuppression)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lifetime Cost (30 years)</strong></td>
+                            <td>$200,000-$400,000</td>
+                            <td>$800,000-$1,200,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cost per QALY Gained</strong></td>
+                            <td>$50,000-$100,000</td>
+                            <td>$100,000-$200,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Organ Allocation Burden</strong></td>
+                            <td>N/A</td>
+                            <td>Requires scarce donor organ; ethical considerations</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p><strong>Clinical Perspective:</strong> While LT is more expensive, the substantial survival advantage in high tumor load patients (5-fold improvement) justifies the cost in appropriately selected candidates. Organ allocation remains an ethical consideration, supporting strict selection criteria.</p>
+            </section>
+
+            <!-- Future Directions -->
+            <section class="section">
+                <h2>Future Directions and Emerging Evidence</h2>
+
+                <p>Several areas of ongoing research may further refine the comparison between LT and resection:</p>
+
+                <h3>Emerging Strategies</h3>
+
+                <ul>
+                    <li><strong>Living Donor Liver Transplantation (LDLT):</strong> Expanding access to LT without competing for deceased donor organs; early results show comparable outcomes to deceased donor LT</li>
+                    <li><strong>Advanced Surgical Techniques:</strong> RAPID (Resection and Partial Liver Transplantation) combining partial resection with transplantation for selected cases</li>
+                    <li><strong>Molecular Prognostic Factors:</strong> Integration of RAS/TP53 co-mutations, BRAF status, and MSI into treatment selection algorithms</li>
+                    <li><strong>Personalized Immunosuppression:</strong> Tailored regimens using mTOR inhibitors (everolimus) with potential anti-tumor effects</li>
+                    <li><strong>Neoadjuvant Therapy Optimization:</strong> Improved chemotherapy regimens and locoregional therapies to maximize disease control before transplant</li>
+                    <li><strong>Recurrence Management:</strong> Aggressive salvage therapy protocols for post-LT recurrence, potentially extending survival</li>
+                </ul>
+            </section>
+
+            <section class="section call-to-action">
+                <h2>Clinical Decision-Making</h2>
+                <p>For detailed patient selection criteria, use the <a href="tools.html">Interactive Tools</a> to calculate prognostic scores (Oslo Score, FCRS, PET-MTV). Review <a href="case-studies.html">Case Studies</a> for real-world examples of treatment selection. Consult the <a href="faq.html">FAQ</a> for common questions about LT versus resection.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CRLM LT Clinical Resource. Evidence-based information for transplant teams.</p>
+            <p class="author"><strong>Created by:</strong> Tor Magnus Smedman, MD PhD | Transplant Oncology Research Group, Oslo University Hospital</p>
+            <p class="disclaimer">This resource is for educational purposes. Clinical decisions should be made in consultation with a multidisciplinary team.</p>
+        </div>
+    </footer>
+
+    <script src="../js/search-index.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

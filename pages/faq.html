@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - CRLM LT Clinical Resource</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CRLM LT Resource</div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="overview.html">Overview</a></li>
+                <li><a href="selection-criteria.html">Selection Criteria</a></li>
+                <li><a href="outcomes.html">Clinical Outcomes</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="faq.html" class="active">FAQ</a></li>
+                <li><a href="lt-vs-resection.html">LT vs Resection</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / FAQ
+            </div>
+
+            <h1>Frequently Asked Questions</h1>
+
+            <section class="section">
+                <p>Find answers to common questions about liver transplantation for colorectal liver metastases.</p>
+            </section>
+
+            <!-- FAQ Items -->
+            <div class="faq-container">
+                <!-- Q1 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-title">When should I refer a patient for LT evaluation in CRLM?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Refer patients with <strong>permanently unresectable, liver-only colorectal metastases</strong> who meet the following criteria:</p>
+                        <ul>
+                            <li>Good performance status (ECOG 0-1)</li>
+                            <li>Adequate response to systemic chemotherapy (≥3 months of therapy)</li>
+                            <li>No extrahepatic metastases (except prior resected pulmonary metastases)</li>
+                            <li>BRAF wild-type (V600E mutation is exclusion)</li>
+                            <li>Microsatellite stable and mismatch repair proficient</li>
+                            <li>No significant comorbidities precluding surgery</li>
+                        </ul>
+                        <p>Early referral is recommended when disease is diagnosed as unresectable, as bridging chemotherapy can be optimized while transplant evaluation proceeds.</p>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-title">What is the difference between Oslo Score and FCRS?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Both are prognostic scoring systems, but they differ in origin and application:</p>
+                        <table class="data-table">
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Oslo Score</th>
+                                <th>FCRS</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Developed for</strong></td>
+                                <td>LT in CRLM (2006)</td>
+                                <td>Liver resection (1999); adapted for LT</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Components</strong></td>
+                                <td>4 factors</td>
+                                <td>5 factors</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Prognostic power</strong></td>
+                                <td>Excellent (7.6-11.0× discrimination)</td>
+                                <td>Good (1.9-2.0× discrimination)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Best use</strong></td>
+                                <td>Primary risk stratification</td>
+                                <td>Secondary confirmation</td>
+                            </tr>
+                        </table>
+                        <p><strong>Recommendation:</strong> Use Oslo Score as primary tool; FCRS for confirmation in borderline cases.</p>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-title">How important is PET-MTV in patient selection?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>PET-MTV (metabolic tumor volume) is <strong>increasingly important</strong> and should be part of standard pre-LT evaluation:</p>
+                        <ul>
+                            <li><strong>Prognostic Value:</strong> PET-MTV < 70 cm³ shows 2.5× better 5-year OS (63.6% vs. 25%)</li>
+                            <li><strong>Biological Information:</strong> Captures tumor aggressiveness beyond size alone</li>
+                            <li><strong>Dual Purpose:</strong> Assesses disease burden AND excludes extrahepatic metastases</li>
+                            <li><strong>Complementary:</strong> Provides information not captured by Oslo Score or FCRS</li>
+                        </ul>
+                        <p><strong>Recommendation:</strong> Obtain 18F-FDG PET/CT as part of standard pre-LT workup. MTV < 70 cm³ is favorable; ≥ 70 cm³ warrants careful consideration.</p>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-title">What happens if a patient has RAS/TP53 co-mutations?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>RAS/TP53 co-mutations are a <strong>negative prognostic factor</strong> but not an absolute exclusion:</p>
+                        <ul>
+                            <li><strong>Median OS:</strong> 21 months (vs. 60 months without co-mutations)</li>
+                            <li><strong>Hazard Ratio:</strong> 4.0 (95% CI 1.7-9.3)</li>
+                            <li><strong>Recommendation:</strong> Patients with RAS/TP53 co-mutations should be carefully counseled about poor prognosis</li>
+                            <li><strong>Alternative Consideration:</strong> May be better served by alternative treatment strategies</li>
+                        </ul>
+                        <p>In contrast, <strong>BRAF V600E mutations ARE an absolute exclusion criterion</strong> and preclude transplantation.</p>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-title">Can living donor liver transplantation (LDLT) be used for CRLM?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, LDLT is an excellent option for CRLM and may offer <strong>superior outcomes</strong>:</p>
+                        <ul>
+                            <li><strong>3-Year OS:</strong> 71.4% (LDLT) vs. 51.4% (DDLT)</li>
+                            <li><strong>Advantages:</strong>
+                                <ul>
+                                    <li>Shorter cold ischemia time</li>
+                                    <li>Better graft quality</li>
+                                    <li>Shorter waitlist time</li>
+                                    <li>Planned surgery with optimal timing</li>
+                                </ul>
+                            </li>
+                            <li><strong>Donor Safety:</strong> Acceptable perioperative morbidity in living donors</li>
+                        </ul>
+                        <p><strong>Recommendation:</strong> LDLT should be considered in centers with experience in living donor transplantation. It may be the preferred approach to circumvent deceased donor scarcity.</p>
+                    </div>
+                </div>
+
+                <!-- Q6 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-title">What is the recurrence pattern after LT for CRLM?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The recurrence pattern after LT for CRLM is <strong>unique and favorable</strong> compared to non-transplant patients:</p>
+                        <ul>
+                            <li><strong>Recurrence Rate:</strong> 78.3% of patients experience recurrence</li>
+                            <li><strong>Median DFS:</strong> 11.8 months (disease-free survival)</li>
+                            <li><strong>BUT Median OS:</strong> 60.3 months overall (excellent despite high recurrence)</li>
+                            <li><strong>Median OS After Relapse:</strong> 37.1 months (very indolent)</li>
+                            <li><strong>94% of Recurrences:</strong> Occur within 2 years of LT</li>
+                        </ul>
+                        <p><strong>Key Insight:</strong> Total hepatectomy removes the primary tumor burden, while residual disease exhibits an indolent pattern with prolonged survival even after relapse. This is the "recurrence paradox" that makes LT effective despite high recurrence rates.</p>
+                    </div>
+                </div>
+
+                <!-- Q7 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-title">How do I manage a patient who relapses after LT?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Management of post-LT recurrence requires a multidisciplinary approach:</p>
+                        <ul>
+                            <li><strong>Surveillance:</strong> Regular imaging (CT/MRI) and tumor markers (CEA)</li>
+                            <li><strong>Site of Recurrence:</strong>
+                                <ul>
+                                    <li>Pulmonary metastases: Consider resection if feasible</li>
+                                    <li>Peritoneal disease: Evaluate for cytoreduction + HIPEC</li>
+                                    <li>Distant metastases: Locoregional or systemic therapy</li>
+                                </ul>
+                            </li>
+                            <li><strong>Chemotherapy:</strong> Restart or continue systemic therapy</li>
+                            <li><strong>Locoregional Therapies:</strong> TACE, SIRT, RFA for limited disease</li>
+                            <li><strong>Immunosuppression:</strong> Careful management to balance rejection risk and anti-tumor immunity</li>
+                        </ul>
+                        <p><strong>Prognosis:</strong> Median OS after relapse is 37.1 months, suggesting that aggressive management of recurrent disease is warranted.</p>
+                    </div>
+                </div>
+
+                <!-- Q8 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-title">What is the role of bridging chemotherapy before LT?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Bridging chemotherapy is <strong>essential</strong> in the pre-LT management of CRLM:</p>
+                        <ul>
+                            <li><strong>Duration:</strong> Minimum 3 months; often 6-12 months during transplant evaluation</li>
+                            <li><strong>Goals:</strong>
+                                <ul>
+                                    <li>Control disease and prevent progression</li>
+                                    <li>Assess chemotherapy response (prognostic factor)</li>
+                                    <li>Identify aggressive disease early</li>
+                                    <li>Optimize disease burden before transplant</li>
+                                </ul>
+                            </li>
+                            <li><strong>Regimens:</strong> Doublet (FOLFOX, FOLFIRI) or triplet (FOLFOXIRI) ± targeted therapy (anti-EGFR, anti-VEGF)</li>
+                            <li><strong>Response Assessment:</strong> Progressive disease on chemotherapy is a risk factor (included in Oslo Score)</li>
+                            <li><strong>Timing:</strong> LT should occur shortly after optimal disease control achieved</li>
+                        </ul>
+                        <p><strong>Key Point:</strong> Adequate response to bridging chemotherapy is a prerequisite for LT consideration.</p>
+                    </div>
+                </div>
+
+                <!-- Q9 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-title">Are there any contraindications specific to CRLM?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, several <strong>CRLM-specific exclusion criteria</strong> have been established by IHPBA:</p>
+                        <ul>
+                            <li><strong>Molecular/Pathological:</strong>
+                                <ul>
+                                    <li>BRAF V600E mutation (absolute exclusion)</li>
+                                    <li>Microsatellite instability or mismatch repair deficiency</li>
+                                    <li>Undifferentiated adenocarcinoma histology</li>
+                                    <li>Signet ring cell carcinoma</li>
+                                </ul>
+                            </li>
+                            <li><strong>Radiological/Clinical:</strong>
+                                <ul>
+                                    <li>Extrahepatic metastases (except prior resected pulmonary metastases)</li>
+                                    <li>Local recurrence of primary tumor</li>
+                                    <li>Inadequate response to bridging chemotherapy</li>
+                                    <li>Extensive nodal disease (N2 or greater)</li>
+                                </ul>
+                            </li>
+                            <li><strong>General Transplant Contraindications:</strong>
+                                <ul>
+                                    <li>Active infection or uncontrolled sepsis</li>
+                                    <li>Significant comorbidities precluding surgery</li>
+                                    <li>Poor performance status (ECOG > 1)</li>
+                                    <li>Active substance abuse</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p><strong>Recommendation:</strong> Use the <a href="tools.html">Patient Selection Decision Tool</a> to systematically assess contraindications.</p>
+                    </div>
+                </div>
+
+                <!-- Q10 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-title">How does LT for CRLM compare to other treatment options?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>LT offers <strong>superior outcomes</strong> compared to alternative approaches for unresectable CRLM:</p>
+                        <table class="data-table">
+                            <tr>
+                                <th>Treatment</th>
+                                <th>5-Year OS</th>
+                                <th>Key Advantages</th>
+                            </tr>
+                            <tr class="favorable">
+                                <td><strong>LT + Chemotherapy</strong></td>
+                                <td>56.6% (ITT)<br>73.3% (Per-Protocol)</td>
+                                <td>Curative intent; removes all liver disease; best long-term outcomes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chemotherapy Alone</strong></td>
+                                <td>12.6%</td>
+                                <td>Non-invasive; no surgical risk; palliative</td>
+                            </tr>
+                            <tr>
+                                <td><strong>PVE + Liver Resection</strong></td>
+                                <td>19.2% (HTL)<br>12.5% (HTL + Left-sided)</td>
+                                <td>Preserves native liver; avoids immunosuppression</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Locoregional Therapy (TACE/SIRT)</strong></td>
+                                <td>~20-30%</td>
+                                <td>Minimally invasive; bridge to LT</td>
+                            </tr>
+                        </table>
+                        <p><strong>Key Finding:</strong> LT provides a 4.5-fold improvement in survival (HR 0.37) compared to chemotherapy alone in the TransMet RCT.</p>
+                    </div>
+                </div>
+
+                <!-- Q11 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-title">What is the role of immunosuppression in LT for CRLM?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Immunosuppression in CRLM transplantation requires careful balance:</p>
+                        <ul>
+                            <li><strong>Standard Regimens:</strong> Tacrolimus, mycophenolate, and corticosteroids (similar to other LT indications)</li>
+                            <li><strong>Unique Consideration:</strong> Need to maintain anti-tumor immunity while preventing rejection</li>
+                            <li><strong>Everolimus:</strong> mTOR inhibitor with potential anti-tumor properties; increasingly used</li>
+                            <li><strong>Monitoring:</strong> Regular assessment of rejection and recurrence risk</li>
+                            <li><strong>Post-LT Chemotherapy:</strong> May be continued or restarted depending on recurrence risk</li>
+                        </ul>
+                        <p><strong>Key Point:</strong> Immunosuppression protocols should be individualized based on tumor biology and recurrence risk.</p>
+                    </div>
+                </div>
+
+                <!-- Q12 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-title">How long is the waitlist time for LT in CRLM?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Waitlist time varies significantly by geography and center:</p>
+                        <ul>
+                            <li><strong>Europe:</strong> Typically 6-18 months depending on country and MELD score</li>
+                            <li><strong>United States:</strong> Highly variable; MELD-based allocation means CRLM patients may wait longer</li>
+                            <li><strong>Living Donor LT:</strong> Can be scheduled more quickly (3-6 months), avoiding waitlist delays</li>
+                            <li><strong>Bridging Therapy:</strong> Chemotherapy continues during waitlist period to maintain disease control</li>
+                        </ul>
+                        <p><strong>Recommendation:</strong> Early referral is important to optimize bridging therapy timing and account for potential waitlist delays.</p>
+                    </div>
+                </div>
+
+                <!-- Q13 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-title">What is the cost and insurance coverage for LT in CRLM?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Cost and coverage varies significantly:</p>
+                        <ul>
+                            <li><strong>United States:</strong> LT for CRLM is increasingly covered by major insurance companies and Medicare</li>
+                            <li><strong>Europe:</strong> Generally covered by national health systems in countries with established CRLM programs</li>
+                            <li><strong>Total Cost:</strong> LT typically costs $300,000-$500,000 USD (varies by center and complications)</li>
+                            <li><strong>Insurance Verification:</strong> Essential to verify coverage before proceeding with evaluation</li>
+                            <li><strong>Financial Counseling:</strong> Most transplant centers provide financial counseling services</li>
+                        </ul>
+                        <p><strong>Note:</strong> This is a general overview; specific coverage should be confirmed with individual insurance providers.</p>
+                    </div>
+                </div>
+
+                <!-- Q14 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-title">Are there ongoing clinical trials for LT in CRLM?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, multiple prospective trials are actively enrolling:</p>
+                        <ul>
+                            <li><strong>SECA III:</strong> Norway; LT vs. Chemo + TACE/SIRT (NCT03494946)</li>
+                            <li><strong>EXCALIBUR 1+2:</strong> Norway; 2nd-line Chemo + HAI or LT vs. Chemo alone (NCT04898504)</li>
+                            <li><strong>Toronto LDLT:</strong> Canada; Living donor LT outcomes (NCT02864485)</li>
+                            <li><strong>LIVER-T(W)O-HEAL:</strong> Germany; LDLT with two-stage hepatectomy (NCT03488953)</li>
+                            <li><strong>SOULMATE:</strong> Sweden; Chemo + LT with extended criteria donors (NCT04161092)</li>
+                            <li><strong>MELODIC:</strong> Italy; LT from deceased donor vs. chemo (NCT04870879)</li>
+                            <li><strong>WCMC Pilot Registry:</strong> United States; Observational registry (NCT04742621)</li>
+                        </ul>
+                        <p><strong>Recommendation:</strong> Check <a href="https://clinicaltrials.gov" target="_blank">ClinicalTrials.gov</a> for current enrollment status and eligibility criteria.</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="section call-to-action">
+                <h2>Still Have Questions?</h2>
+                <p>If you have additional questions not answered here, please consult the <a href="resources.html">Resources</a> page for guidelines and references, or contact your transplant center directly.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CRLM LT Clinical Resource. Evidence-based information for transplant teams.</p>
+            <p class="author"><strong>Created by:</strong> Tor Magnus Smedman, MD PhD | Transplant Oncology Research Group, Oslo University Hospital</p>
+            <p class="disclaimer">This resource is for educational purposes. Clinical decisions should be made in consultation with a multidisciplinary team.</p>
+        </div>
+    </footer>
+
+    <script src="../js/faq.js"></script>
+</body>
+</html>

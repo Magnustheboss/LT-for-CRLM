@@ -163,10 +163,6 @@
     <script src="js/main.js?v=1765115033437"></script>
     <script>
         // Register Service Worker for cache management
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js').then(registration => {
-                console.log('Service Worker registered successfully');
-            }).catch(error => {
                 console.log('Service Worker registration failed:', error);
             });
         }

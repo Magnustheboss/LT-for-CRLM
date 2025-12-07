@@ -315,5 +315,10 @@
             alert('All PDFs ZIP\n\nNote: In a production environment, this would download a ZIP file containing all PDF resources.\n\nTo create this functionality, you would need:\n1. A backend server\n2. PDF generation library\n3. ZIP compression library');
         }
     </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+    </script>
 </body>
 </html>

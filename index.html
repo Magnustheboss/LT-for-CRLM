@@ -159,11 +159,19 @@
             <p class="author"><strong>Created by:</strong> Tor Magnus Smedman, MD PhD | Transplant Oncology Research Group, Oslo University Hospital</p>
             <p class="disclaimer">This resource is for educational purposes. Clinical decisions should be made in consultation with a multidisciplinary team.</p>
         </div>
-    </footer>
-
-    <script src="js/main.js?v=1765115033437"></script>
+    </footer>    <script src="js/main.js?v=1765115033437"></script>
     <script>
-        // Hamburger menu toggle
+        // Register Service Worker for cache management
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').then(registration => {
+                console.log('Service Worker registered successfully');
+            }).catch(error => {
+                console.log('Service Worker registration failed:', error);
+            });
+        }
+    </script>
+</body>
+</html>        // Hamburger menu toggle
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
         

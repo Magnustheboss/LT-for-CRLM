@@ -191,3 +191,62 @@ const newPagesContent = [
 
 // Merge with existing search index
 searchIndex.push(...newPagesContent);
+
+// Publications page content
+const publicationsContent = {
+    category: 'Publications',
+    items: [
+        {
+            title: 'TransMet Trial - Liver Transplantation Plus Chemotherapy',
+            content: 'Randomized controlled trial showing 56.6% vs 12.6% 5-year OS for LT plus chemotherapy vs chemotherapy alone',
+            keywords: ['TransMet', 'RCT', 'chemotherapy', 'survival', 'Adam', 'Dueland', 'Smedman']
+        },
+        {
+            title: 'Long-Term Survival and Prognostic Factors - JAMA Surgery 2023',
+            content: 'Landmark study establishing Oslo Score with 88.9% 10-year OS for favorable risk patients',
+            keywords: ['Oslo Score', 'prognostic factors', 'JAMA Surgery', 'Dueland', 'Smedman', 'long-term survival']
+        },
+        {
+            title: 'SECA-II Trial - Extended Criteria Liver Transplantation',
+            content: 'Feasibility and safety of LT using extended criteria for both patients and donors',
+            keywords: ['SECA-II', 'extended criteria', 'Smedman', 'donor criteria', 'patient selection']
+        },
+        {
+            title: 'SECA-I Trial - Long-Term Follow-Up',
+            content: 'Pioneering prospective pilot study with long-term follow-up demonstrating excellent outcomes',
+            keywords: ['SECA-I', 'Solheim', 'long-term follow-up', 'prospective', 'pilot study']
+        },
+        {
+            title: 'PET-MTV Stratification Study - HPB 2022',
+            content: 'Comparative analysis showing LT superior to resection in high MTV patients',
+            keywords: ['PET-MTV', 'metabolic tumor volume', 'Grut', 'resection comparison', 'HPB']
+        },
+        {
+            title: 'IHPBA Consensus Guidelines - 2021',
+            content: 'International consensus guidelines for LT in unresectable CRLM',
+            keywords: ['IHPBA', 'consensus guidelines', 'Bonney', 'international', 'selection criteria']
+        },
+        {
+            title: 'Living Donor Liver Transplantation - LDLT',
+            content: 'Analysis of LDLT outcomes for CRLM with comparable or superior results',
+            keywords: ['LDLT', 'living donor', 'Dueland', 'access', 'outcomes']
+        },
+        {
+            title: 'PVE and Resection vs Liver Transplantation - JAMA Surgery 2021',
+            content: '33.4% vs 6.7% 5-year OS comparing LT to PVE plus resection',
+            keywords: ['PVE', 'portal vein embolization', 'resection', 'comparative', 'Dueland']
+        },
+        {
+            title: 'Research Group Publications',
+            content: 'Complete list of publications from Transplant Oncology Research Group at Oslo University Hospital',
+            keywords: ['publications', 'research group', 'Oslo', 'Smedman', 'Dueland', 'Line', 'Grut', 'Solheim']
+        }
+    ]
+};
+
+// Add publications to search index
+searchIndex.push(...publicationsContent.items.map(item => ({
+    ...item,
+    category: publicationsContent.category,
+    url: 'pages/publications.html'
+})));

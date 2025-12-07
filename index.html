@@ -159,7 +159,8 @@
             <p class="author"><strong>Created by:</strong> Tor Magnus Smedman, MD PhD | Transplant Oncology Research Group, Oslo University Hospital</p>
             <p class="disclaimer">This resource is for educational purposes. Clinical decisions should be made in consultation with a multidisciplinary team.</p>
         </div>
-    </footer>    <script src="js/main.js?v=1765115033437"></script>
+    </footer>
+    <script src="js/main.js?v=1765115033437"></script>
     <script>
         // Register Service Worker for cache management
         if ('serviceWorker' in navigator) {
@@ -167,27 +168,6 @@
                 console.log('Service Worker registered successfully');
             }).catch(error => {
                 console.log('Service Worker registration failed:', error);
-            });
-        }
-    </script>
-</body>
-</html>        // Hamburger menu toggle
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
-        
-        if (hamburger && navMenu) {
-            hamburger.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                hamburger.classList.toggle('active');
-            });
-            
-            // Close menu when a link is clicked
-            const navLinks = navMenu.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('active');
-                    hamburger.classList.remove('active');
-                });
             });
         }
     </script>

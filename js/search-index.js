@@ -153,3 +153,20 @@ if (typeof module !== 'undefined' && module.exports) {
   { page: 'pages/lt-vs-resection.html', title: 'Patient Selection Framework', content: 'treatment selection algorithm LT resection clinical scenario', category: 'Comparison' },
   { page: 'pages/lt-vs-resection.html', title: 'Cost-Effectiveness', content: 'cost QALY organ allocation ethical considerations', category: 'Comparison' },
   { page: 'pages/lt-vs-resection.html', title: 'Portal Vein Embolization', content: 'PVE portal vein embolization future liver remnant resection', category: 'Comparison' },
+
+// Add research group content to search index
+const researchGroupContent = [
+    { title: "Transplant Oncology Research Group", category: "About Research Group", preview: "Leading research group at Oslo University Hospital exploring liver transplantation for cancer patients", url: "pages/about-research-group.html" },
+    { title: "Pål Dag Line - Group Leader", category: "About Research Group", preview: "Group leader of the Transplant Oncology Research Group at University of Oslo", url: "pages/about-research-group.html" },
+    { title: "Tor Magnus Smedman", category: "About Research Group", preview: "MD PhD, core member of Transplant Oncology Research Group", url: "pages/about-research-group.html" },
+    { title: "Research Team Members", category: "About Research Group", preview: "Multidisciplinary team including surgeons, oncologists, radiologists, and specialists", url: "pages/about-research-group.html" },
+    { title: "Current Research Projects", category: "About Research Group", preview: "CRLM studies, health-economic analysis, RAPID technique evaluation, molecular mechanisms", url: "pages/about-research-group.html" },
+    { title: "IHPBA Consensus Guidelines", category: "About Research Group", preview: "Contribution to International Hepato-Pancreato-Biliary Association guidelines", url: "pages/about-research-group.html" },
+    { title: "RAPID Procedure Research", category: "About Research Group", preview: "Rapid Autologous Partial Liver Transplantation technique evaluation and international consensus", url: "pages/about-research-group.html" },
+    { title: "International Collaborations", category: "About Research Group", preview: "Partners from Denmark, UK, Germany, Italy, USA, and Canada", url: "pages/about-research-group.html" },
+    { title: "Health-Related Quality of Life Study", category: "About Research Group", preview: "Research on quality of life outcomes for colorectal cancer patients after liver transplantation", url: "pages/about-research-group.html" },
+    { title: "Molecular Mechanisms Research", category: "About Research Group", preview: "Elucidating biological mechanisms relevant for CRLM treatment in cooperation with Professor Ragnhild Lothe", url: "pages/about-research-group.html" }
+];
+
+// Merge with existing search index
+searchIndex.push(...researchGroupContent);

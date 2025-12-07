@@ -1700,3 +1700,72 @@ a:hover {
         font-size: 1rem;
     }
 }
+
+
+/* Research Group Page Styles */
+.research-project {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+.research-project h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.research-project p {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.three-column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.column {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border-top: 3px solid var(--primary-color);
+}
+
+.column h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.column p {
+    margin: 0.25rem 0;
+    font-size: 0.95rem;
+}
+
+.reference-item {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: var(--border-radius);
+}
+
+.reference-item h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.reference-item ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.reference-item li {
+    margin: 1rem 0;
+    line-height: 1.6;
+}

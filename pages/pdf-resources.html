@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Downloadable PDF resources for CRLM liver transplantation - Clinical guides, calculators, and reference materials.">
+    <meta name="keywords" content="PDF, resources, clinical guide, calculator, CRLM, liver transplantation">
+    <title>PDF Resources - CRLM LT Clinical Resource</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CRLM LT Resource</div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="overview.html">Overview</a></li>
+                <li><a href="selection-criteria.html">Selection Criteria</a></li>
+                <li><a href="outcomes.html">Clinical Outcomes</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="case-studies.html">Cases</a></li>
+                <li><a href="bridging-therapy.html">Bridging Therapy</a></li>
+                <li><a href="lt-vs-resection.html">LT vs Resection</a></li>
+                <li><a href="survival-curves.html">Survival Curves</a></li>
+                <li><a href="pdf-resources.html" class="active">PDF Resources</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about-research-group.html">About Research Group</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / PDF Resources
+            </div>
+
+            <h1>Downloadable PDF Resources</h1>
+            <p class="subtitle">Clinical guides, calculators, and reference materials for CRLM liver transplantation</p>
+
+            <!-- Introduction -->
+            <section class="section">
+                <h2>About These Resources</h2>
+                <div class="info-box">
+                    <p>All PDF resources are designed for clinical use and can be printed, shared with your team, or used in patient consultations. These documents are evidence-based and regularly updated.</p>
+                </div>
+            </section>
+
+            <!-- Quick Reference Guide -->
+            <section class="section">
+                <h2>Clinical Resources</h2>
+
+                <div class="pdf-resource">
+                    <div class="pdf-icon">📄</div>
+                    <div class="pdf-content">
+                        <h3>Quick Reference Guide</h3>
+                        <p><strong>Purpose:</strong> One-page summary of key decision points for CRLM LT evaluation</p>
+                        <p><strong>Contents:</strong></p>
+                        <ul>
+                            <li>Indications for LT in CRLM</li>
+                            <li>Oslo Score calculation</li>
+                            <li>Key exclusion criteria</li>
+                            <li>Evaluation checklist</li>
+                            <li>Contact information for referral</li>
+                        </ul>
+                        <p><strong>Best for:</strong> Busy clinicians, quick reference, patient handouts</p>
+                        <button class="pdf-button" onclick="downloadPDF('quick-reference')">📥 Download PDF</button>
+                    </div>
+                </div>
+
+                <div class="pdf-resource">
+                    <div class="pdf-icon">📘</div>
+                    <div class="pdf-content">
+                        <h3>Comprehensive Clinical Guide</h3>
+                        <p><strong>Purpose:</strong> Complete reference manual for CRLM liver transplantation</p>
+                        <p><strong>Contents:</strong></p>
+                        <ul>
+                            <li>Historical context and current evidence</li>
+                            <li>Detailed selection criteria (Oslo Score, FCRS, PET-MTV)</li>
+                            <li>Molecular prognostic factors</li>
+                            <li>Bridging therapy strategies</li>
+                            <li>Surgical techniques and outcomes</li>
+                            <li>Post-transplant management</li>
+                            <li>Recurrence management</li>
+                            <li>Comprehensive reference list</li>
+                        </ul>
+                        <p><strong>Best for:</strong> In-depth study, team education, research</p>
+                        <button class="pdf-button" onclick="downloadPDF('comprehensive-guide')">📥 Download PDF</button>
+                    </div>
+                </div>
+
+                <div class="pdf-resource">
+                    <div class="pdf-icon">🧮</div>
+                    <div class="pdf-content">
+                        <h3>Oslo Score Calculator</h3>
+                        <p><strong>Purpose:</strong> Printable worksheet for calculating Oslo Score</p>
+                        <p><strong>Contents:</strong></p>
+                        <ul>
+                            <li>Step-by-step calculation instructions</li>
+                            <li>Score interpretation table</li>
+                            <li>Prognostic outcomes by score</li>
+                            <li>Risk stratification summary</li>
+                            <li>Space for patient data entry</li>
+                        </ul>
+                        <p><strong>Best for:</strong> Patient evaluation, clinical rounds, teaching</p>
+                        <button class="pdf-button" onclick="downloadPDF('oslo-calculator')">📥 Download PDF</button>
+                    </div>
+                </div>
+
+                <div class="pdf-resource">
+                    <div class="pdf-icon">🧮</div>
+                    <div class="pdf-content">
+                        <h3>Fong Clinical Risk Score Calculator</h3>
+                        <p><strong>Purpose:</strong> Printable worksheet for calculating FCRS</p>
+                        <p><strong>Contents:</strong></p>
+                        <ul>
+                            <li>FCRS component scoring</li>
+                            <li>Total score calculation</li>
+                            <li>Risk group assignment</li>
+                            <li>Comparative outcomes table</li>
+                            <li>Clinical interpretation guide</li>
+                        </ul>
+                        <p><strong>Best for:</strong> Complementary risk assessment, validation</p>
+                        <button class="pdf-button" onclick="downloadPDF('fcrs-calculator')">📥 Download PDF</button>
+                    </div>
+                </div>
+
+                <div class="pdf-resource">
+                    <div class="pdf-icon">👥</div>
+                    <div class="pdf-content">
+                        <h3>Patient Information Sheet</h3>
+                        <p><strong>Purpose:</strong> Patient-friendly explanation of CRLM LT</p>
+                        <p><strong>Contents:</strong></p>
+                        <ul>
+                            <li>What is CRLM and why transplant?</li>
+                            <li>Am I a candidate?</li>
+                            <li>What to expect before surgery</li>
+                            <li>The transplant procedure</li>
+                            <li>Recovery and follow-up</li>
+                            <li>Possible complications</li>
+                            <li>Long-term outlook</li>
+                            <li>Questions to ask your doctor</li>
+                        </ul>
+                        <p><strong>Best for:</strong> Patient education, informed consent discussions</p>
+                        <button class="pdf-button" onclick="downloadPDF('patient-info')">📥 Download PDF</button>
+                    </div>
+                </div>
+
+                <div class="pdf-resource">
+                    <div class="pdf-icon">📋</div>
+                    <div class="pdf-content">
+                        <h3>Pre-Transplant Evaluation Checklist</h3>
+                        <p><strong>Purpose:</strong> Comprehensive checklist for pre-transplant assessment</p>
+                        <p><strong>Contents:</strong></p>
+                        <ul>
+                            <li>Clinical assessment items</li>
+                            <li>Imaging requirements</li>
+                            <li>Laboratory tests</li>
+                            <li>Functional assessment</li>
+                            <li>Psychosocial evaluation</li>
+                            <li>Infectious disease screening</li>
+                            <li>Cardiopulmonary assessment</li>
+                            <li>Nutritional evaluation</li>
+                        </ul>
+                        <p><strong>Best for:</strong> Standardizing evaluation, quality assurance</p>
+                        <button class="pdf-button" onclick="downloadPDF('evaluation-checklist')">📥 Download PDF</button>
+                    </div>
+                </div>
+
+                <div class="pdf-resource">
+                    <div class="pdf-icon">💊</div>
+                    <div class="pdf-content">
+                        <h3>Bridging Therapy Reference</h3>
+                        <p><strong>Purpose:</strong> Guide to chemotherapy and locoregional therapies</p>
+                        <p><strong>Contents:</strong></p>
+                        <ul>
+                            <li>Chemotherapy regimens (FOLFOXIRI, FOLFIRI, FOLFOX)</li>
+                            <li>Targeted therapy options</li>
+                            <li>TACE, SIRT, RFA protocols</li>
+                            <li>Response assessment criteria</li>
+                            <li>Timing and sequencing</li>
+                            <li>Toxicity management</li>
+                        </ul>
+                        <p><strong>Best for:</strong> Treatment planning, oncology consultation</p>
+                        <button class="pdf-button" onclick="downloadPDF('bridging-therapy')">📥 Download PDF</button>
+                    </div>
+                </div>
+
+                <div class="pdf-resource">
+                    <div class="pdf-icon">📊</div>
+                    <div class="pdf-content">
+                        <h3>Survival Data Summary</h3>
+                        <p><strong>Purpose:</strong> Comprehensive survival statistics and comparisons</p>
+                        <p><strong>Contents:</strong></p>
+                        <ul>
+                            <li>Overall survival by Oslo Score</li>
+                            <li>LT vs. chemotherapy outcomes</li>
+                            <li>Disease-free survival patterns</li>
+                            <li>Recurrence rates and sites</li>
+                            <li>Complication rates</li>
+                            <li>Quality of life data</li>
+                            <li>Data tables and figures</li>
+                        </ul>
+                        <p><strong>Best for:</strong> Presentations, publications, evidence review</p>
+                        <button class="pdf-button" onclick="downloadPDF('survival-summary')">📥 Download PDF</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How to Use -->
+            <section class="section">
+                <h2>How to Use These Resources</h2>
+                
+                <div class="usage-guide">
+                    <h3>For Clinical Practice</h3>
+                    <ol>
+                        <li>Download the Quick Reference Guide and keep it at your desk</li>
+                        <li>Use the calculators when evaluating new patients</li>
+                        <li>Print the evaluation checklist for your team</li>
+                        <li>Share the patient information sheet with candidates</li>
+                    </ol>
+                </div>
+
+                <div class="usage-guide">
+                    <h3>For Education</h3>
+                    <ol>
+                        <li>Use the Comprehensive Guide for resident/fellow education</li>
+                        <li>Print case studies for journal clubs</li>
+                        <li>Share survival data for presentations</li>
+                        <li>Use infographics in teaching rounds</li>
+                    </ol>
+                </div>
+
+                <div class="usage-guide">
+                    <h3>For Patient Counseling</h3>
+                    <ol>
+                        <li>Provide the Patient Information Sheet at first consultation</li>
+                        <li>Use survival curves when discussing outcomes</li>
+                        <li>Review the evaluation checklist to explain the process</li>
+                        <li>Discuss realistic expectations using evidence-based data</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Technical Information -->
+            <section class="section">
+                <h2>Technical Information</h2>
+                <div class="info-box">
+                    <p><strong>File Format:</strong> PDF (Adobe Acrobat)</p>
+                    <p><strong>Compatibility:</strong> All devices and operating systems</p>
+                    <p><strong>Printing:</strong> Optimized for both color and black-and-white printing</p>
+                    <p><strong>Updates:</strong> Resources are updated regularly as new evidence emerges</p>
+                    <p><strong>Attribution:</strong> Please cite the Transplant Oncology Research Group when using these materials</p>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="call-to-action">
+                <h2>Download All Resources</h2>
+                <p>All PDF resources are free to download and use in your clinical practice. Print them, share them with your team, and use them to support evidence-based decision-making in CRLM liver transplantation.</p>
+                <button class="cta-button" onclick="downloadAllPDFs()">📥 Download All PDFs (ZIP)</button>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CRLM LT Clinical Resource. Evidence-based information for transplant teams.</p>
+            <p class="author"><strong>Created by:</strong> Tor Magnus Smedman, MD PhD | Transplant Oncology Research Group, Oslo University Hospital</p>
+            <p class="disclaimer">This resource is for educational purposes. Clinical decisions should be made in consultation with a multidisciplinary team.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+            
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+        }
+
+        // PDF Download Functions
+        function downloadPDF(filename) {
+            // Create a placeholder message
+            alert('PDF: ' + filename + '.pdf\n\nNote: In a production environment, this would download the actual PDF file.\n\nTo generate PDFs, you can:\n1. Use the "Print to PDF" feature in your browser\n2. Use a PDF generation service\n3. Create PDFs using tools like wkhtmltopdf or Puppeteer');
+        }
+
+        function downloadAllPDFs() {
+            alert('All PDFs ZIP\n\nNote: In a production environment, this would download a ZIP file containing all PDF resources.\n\nTo create this functionality, you would need:\n1. A backend server\n2. PDF generation library\n3. ZIP compression library');
+        }
+    </script>
+</body>
+</html>

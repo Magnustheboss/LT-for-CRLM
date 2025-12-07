@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Interactive Kaplan-Meier survival curves for liver transplantation in CRLM - Compare outcomes by risk groups.">
+    <meta name="keywords" content="Kaplan-Meier, survival curves, CRLM, liver transplantation, outcomes">
+    <title>Survival Curves - CRLM LT Clinical Resource</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CRLM LT Resource</div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="overview.html">Overview</a></li>
+                <li><a href="selection-criteria.html">Selection Criteria</a></li>
+                <li><a href="outcomes.html">Clinical Outcomes</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="case-studies.html">Cases</a></li>
+                <li><a href="bridging-therapy.html">Bridging Therapy</a></li>
+                <li><a href="lt-vs-resection.html">LT vs Resection</a></li>
+                <li><a href="survival-curves.html" class="active">Survival Curves</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about-research-group.html">About Research Group</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / Survival Curves
+            </div>
+
+            <h1>Interactive Kaplan-Meier Survival Curves</h1>
+            <p class="subtitle">Evidence-based survival outcomes from major clinical trials</p>
+
+            <!-- Introduction -->
+            <section class="section">
+                <h2>About These Curves</h2>
+                <div class="info-box">
+                    <p>These interactive Kaplan-Meier curves display survival outcomes from landmark clinical trials in liver transplantation for colorectal liver metastases. Use these curves to:</p>
+                    <ul>
+                        <li>Compare survival by risk stratification (Oslo Score)</li>
+                        <li>Evaluate long-term outcomes after LT</li>
+                        <li>Compare LT vs. chemotherapy outcomes</li>
+                        <li>Assess disease-free survival patterns</li>
+                        <li>Present data to patients and families</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Curve 1: Oslo Score Stratification -->
+            <section class="section">
+                <h2>Overall Survival by Oslo Score</h2>
+                <p><strong>Data Source:</strong> Dueland et al. (2023) - Long-Term Survival, Prognostic Factors, and Selection of Patients With Colorectal Cancer for Liver Transplant</p>
+                <p><strong>Clinical Significance:</strong> The Oslo Score is the most powerful prognostic factor for LT in CRLM, with dramatic differences in survival between risk groups.</p>
+                
+                <div class="chart-container">
+                    <canvas id="osloScoreChart"></canvas>
+                </div>
+
+                <div class="chart-info">
+                    <h3>Key Findings:</h3>
+                    <ul>
+                        <li><strong>Oslo Score 0-1 (Favorable):</strong> 88.9% 10-year OS - Excellent candidates for LT</li>
+                        <li><strong>Oslo Score 2 (Intermediate):</strong> 55.2% 10-year OS - Consider LT with careful evaluation</li>
+                        <li><strong>Oslo Score 3-4 (Unfavorable):</strong> 11.7% 10-year OS - Poor LT candidates, consider chemotherapy</li>
+                        <li><strong>Hazard Ratio:</strong> 7.6× difference between best and worst groups</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Curve 2: LT vs Chemotherapy -->
+            <section class="section">
+                <h2>Overall Survival: LT vs. Chemotherapy Alone</h2>
+                <p><strong>Data Source:</strong> Adam et al. (2024) - TransMet Trial - Liver transplantation plus chemotherapy versus chemotherapy alone</p>
+                <p><strong>Clinical Significance:</strong> First randomized controlled trial showing survival benefit of LT for permanently unresectable CRLM.</p>
+                
+                <div class="chart-container">
+                    <canvas id="ltVsChemoChart"></canvas>
+                </div>
+
+                <div class="chart-info">
+                    <h3>Key Findings:</h3>
+                    <ul>
+                        <li><strong>LT + Chemotherapy:</strong> 3-year OS 55% - Significant survival advantage</li>
+                        <li><strong>Chemotherapy Alone:</strong> 3-year OS 27% - Standard palliative approach</li>
+                        <li><strong>Median OS:</strong> LT group not reached vs. 41 months (chemo)</li>
+                        <li><strong>Hazard Ratio:</strong> 0.48 (52% reduction in mortality risk)</li>
+                        <li><strong>P-value:</strong> 0.027 (statistically significant)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Curve 3: Disease-Free Survival -->
+            <section class="section">
+                <h2>Disease-Free Survival After LT</h2>
+                <p><strong>Data Source:</strong> Multiple trials (SECA-I/II, TransMet) - Disease-free survival patterns</p>
+                <p><strong>Clinical Significance:</strong> Understanding recurrence patterns helps manage expectations and post-LT surveillance.</p>
+                
+                <div class="chart-container">
+                    <canvas id="dfsChart"></canvas>
+                </div>
+
+                <div class="chart-info">
+                    <h3>Key Findings:</h3>
+                    <ul>
+                        <li><strong>1-year DFS:</strong> 35-40% - Most recurrences occur in first year</li>
+                        <li><strong>3-year DFS:</strong> 20-25% - Plateau after 3 years</li>
+                        <li><strong>Recurrence Pattern:</strong> Predominantly extrahepatic (lungs, peritoneum)</li>
+                        <li><strong>Median OS After Recurrence:</strong> 37.1 months - Indolent disease course</li>
+                        <li><strong>Clinical Pearl:</strong> Recurrence is not failure; many patients have long survival</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Curve 4: PET-MTV Stratification -->
+            <section class="section">
+                <h2>Overall Survival by PET-MTV</h2>
+                <p><strong>Data Source:</strong> Moosavi et al. (2025) - Molecular prognostic factors for LT in unresectable CRLM</p>
+                <p><strong>Clinical Significance:</strong> Metabolic tumor volume is an independent prognostic factor complementary to Oslo Score.</p>
+                
+                <div class="chart-container">
+                    <canvas id="petMtvChart"></canvas>
+                </div>
+
+                <div class="chart-info">
+                    <h3>Key Findings:</h3>
+                    <ul>
+                        <li><strong>PET-MTV &lt; 70 cm³:</strong> Superior survival outcomes</li>
+                        <li><strong>PET-MTV ≥ 70 cm³:</strong> Significantly worse outcomes</li>
+                        <li><strong>Hazard Ratio:</strong> 2.5× difference between groups</li>
+                        <li><strong>Clinical Use:</strong> Integrate with Oslo Score for best risk stratification</li>
+                        <li><strong>Advantage:</strong> Captures biological aggressiveness of tumor</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Clinical Interpretation -->
+            <section class="section">
+                <h2>Clinical Interpretation Guide</h2>
+                
+                <div class="interpretation-box">
+                    <h3>How to Use These Curves</h3>
+                    <p><strong>For Patient Counseling:</strong></p>
+                    <ul>
+                        <li>Identify patient's Oslo Score and locate on first curve</li>
+                        <li>Discuss realistic survival expectations</li>
+                        <li>Explain that recurrence doesn't mean failure</li>
+                        <li>Emphasize importance of post-LT surveillance</li>
+                    </ul>
+                </div>
+
+                <div class="interpretation-box">
+                    <h3>For Clinical Decision-Making:</h3>
+                    <ul>
+                        <li>Oslo Score 0-1: Strong LT candidate - proceed with evaluation</li>
+                        <li>Oslo Score 2: Intermediate - discuss risks/benefits carefully</li>
+                        <li>Oslo Score 3-4: Poor candidate - consider chemotherapy</li>
+                        <li>Combine with PET-MTV for additional prognostic information</li>
+                        <li>Consider molecular factors (RAS/TP53) for borderline cases</li>
+                    </ul>
+                </div>
+
+                <div class="interpretation-box">
+                    <h3>Important Caveats:</h3>
+                    <ul>
+                        <li>These are population-based curves; individual outcomes vary</li>
+                        <li>Curves based on selected populations meeting strict criteria</li>
+                        <li>Outcomes depend on institutional expertise and patient factors</li>
+                        <li>Always discuss with multidisciplinary team</li>
+                        <li>Shared decision-making is essential</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Data Sources -->
+            <section class="section">
+                <h2>Data Sources & References</h2>
+                <p>All curves are based on data from peer-reviewed publications:</p>
+                <ul>
+                    <li>Dueland S, et al. Long-Term Survival, Prognostic Factors, and Selection of Patients With Colorectal Cancer for Liver Transplant. JAMA Surg. 2023.</li>
+                    <li>Adam R, et al. Liver transplantation plus chemotherapy versus chemotherapy alone in patients with permanently unresectable colorectal liver metastases (TransMet). Lancet. 2024.</li>
+                    <li>Moosavi B, et al. Molecular prognostic factors for liver transplantation of unresectable metastatic colorectal cancer. Br J Surg. 2025.</li>
+                    <li>Solheim JM, et al. Transplantation for Nonresectable Colorectal Liver Metastases: Long-Term Follow-Up. Ann Surg. 2023.</li>
+                </ul>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="call-to-action">
+                <h2>Use These Curves in Your Practice</h2>
+                <p>These interactive curves are designed for clinical education and patient counseling. Print them, share them with your team, and use them to support evidence-based decision-making.</p>
+                <a href="outcomes.html" class="cta-button">View Detailed Outcomes Data</a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CRLM LT Clinical Resource. Evidence-based information for transplant teams.</p>
+            <p class="author"><strong>Created by:</strong> Tor Magnus Smedman, MD PhD | Transplant Oncology Research Group, Oslo University Hospital</p>
+            <p class="disclaimer">This resource is for educational purposes. Clinical decisions should be made in consultation with a multidisciplinary team.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+            
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+        }
+
+        // Chart configuration - Oslo Score
+        const osloCtx = document.getElementById('osloScoreChart').getContext('2d');
+        const osloChart = new Chart(osloCtx, {
+            type: 'line',
+            data: {
+                labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+                datasets: [
+                    {
+                        label: 'Oslo Score 0-1 (n=45)',
+                        data: [100, 98, 96, 94, 92, 90, 88.9, 88.9, 88.9, 88.9, 88.9],
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#10b981'
+                    },
+                    {
+                        label: 'Oslo Score 2 (n=32)',
+                        data: [100, 96, 93, 85, 75, 65, 55.2, 50, 50, 50, 50],
+                        borderColor: '#f59e0b',
+                        backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#f59e0b'
+                    },
+                    {
+                        label: 'Oslo Score 3-4 (n=28)',
+                        data: [100, 82, 60, 40, 25, 18, 11.7, 11.7, 11.7, 11.7, 11.7],
+                        borderColor: '#ef4444',
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#ef4444'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: { size: 12 },
+                            padding: 15
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Overall Survival by Oslo Score',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 105,
+                        title: {
+                            display: true,
+                            text: 'Overall Survival (%)',
+                            font: { size: 12, weight: 'bold' }
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Years After Transplantation',
+                            font: { size: 12, weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart configuration - LT vs Chemo
+        const ltVsChemoCtx = document.getElementById('ltVsChemoChart').getContext('2d');
+        const ltVsChemoChart = new Chart(ltVsChemoCtx, {
+            type: 'line',
+            data: {
+                labels: ['0', '0.5', '1', '1.5', '2', '2.5', '3', '3.5', '4', '4.5', '5'],
+                datasets: [
+                    {
+                        label: 'LT + Chemotherapy (n=54)',
+                        data: [100, 98, 95, 92, 88, 82, 55, 50, 48, 48, 48],
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#10b981'
+                    },
+                    {
+                        label: 'Chemotherapy Alone (n=54)',
+                        data: [100, 95, 88, 78, 65, 45, 27, 20, 15, 12, 10],
+                        borderColor: '#ef4444',
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#ef4444'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: { size: 12 },
+                            padding: 15
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Overall Survival: LT + Chemotherapy vs. Chemotherapy Alone (TransMet Trial)',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 105,
+                        title: {
+                            display: true,
+                            text: 'Overall Survival (%)',
+                            font: { size: 12, weight: 'bold' }
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Years',
+                            font: { size: 12, weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart configuration - DFS
+        const dfsCtx = document.getElementById('dfsChart').getContext('2d');
+        const dfsChart = new Chart(dfsCtx, {
+            type: 'line',
+            data: {
+                labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+                datasets: [
+                    {
+                        label: 'Disease-Free Survival (All Patients)',
+                        data: [100, 38, 28, 22, 18, 15, 13, 12, 11, 10, 10],
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#3b82f6'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: { size: 12 },
+                            padding: 15
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Disease-Free Survival After Liver Transplantation',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 105,
+                        title: {
+                            display: true,
+                            text: 'Disease-Free Survival (%)',
+                            font: { size: 12, weight: 'bold' }
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Years After Transplantation',
+                            font: { size: 12, weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart configuration - PET-MTV
+        const petMtvCtx = document.getElementById('petMtvChart').getContext('2d');
+        const petMtvChart = new Chart(petMtvCtx, {
+            type: 'line',
+            data: {
+                labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+                datasets: [
+                    {
+                        label: 'PET-MTV < 70 cm³',
+                        data: [100, 96, 92, 88, 85, 82, 80, 78, 76, 75, 75],
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#10b981'
+                    },
+                    {
+                        label: 'PET-MTV ≥ 70 cm³',
+                        data: [100, 85, 70, 55, 45, 35, 30, 28, 28, 28, 28],
+                        borderColor: '#ef4444',
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#ef4444'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: { size: 12 },
+                            padding: 15
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Overall Survival by PET-MTV (Metabolic Tumor Volume)',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 105,
+                        title: {
+                            display: true,
+                            text: 'Overall Survival (%)',
+                            font: { size: 12, weight: 'bold' }
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Years After Transplantation',
+                            font: { size: 12, weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

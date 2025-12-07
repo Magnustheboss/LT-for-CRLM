@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Interactive patient selection flowchart for CRLM liver transplantation - Step-by-step decision support.">
+    <meta name="keywords" content="flowchart, patient selection, decision support, CRLM, liver transplantation">
+    <title>Patient Selection Flowchart - CRLM LT Clinical Resource</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CRLM LT Resource</div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="overview.html">Overview</a></li>
+                <li><a href="selection-criteria.html">Selection Criteria</a></li>
+                <li><a href="outcomes.html">Clinical Outcomes</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="case-studies.html">Cases</a></li>
+                <li><a href="bridging-therapy.html">Bridging Therapy</a></li>
+                <li><a href="lt-vs-resection.html">LT vs Resection</a></li>
+                <li><a href="survival-curves.html">Survival Curves</a></li>
+                <li><a href="patient-flowchart.html" class="active">Patient Flowchart</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about-research-group.html">About Research Group</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / Patient Selection Flowchart
+            </div>
+
+            <h1>Interactive Patient Selection Flowchart</h1>
+            <p class="subtitle">Step-by-step guide for evaluating candidates for liver transplantation in CRLM</p>
+
+            <!-- Introduction -->
+            <section class="section">
+                <h2>How to Use This Flowchart</h2>
+                <div class="info-box">
+                    <p>This interactive flowchart guides you through the systematic evaluation of patients with colorectal liver metastases for liver transplantation. Answer each question to determine if the patient is a suitable candidate.</p>
+                    <p><strong>Important:</strong> This tool is for educational purposes and should not replace clinical judgment. Always consult with your multidisciplinary transplant team.</p>
+                </div>
+            </section>
+
+            <!-- Flowchart -->
+            <section class="section">
+                <h2>Patient Evaluation Flowchart</h2>
+                
+                <div class="flowchart-container">
+                    <!-- Step 1: Start -->
+                    <div class="flowchart-step" id="step1">
+                        <div class="step-box start">
+                            <h3>Patient with Colorectal Cancer</h3>
+                            <p>Liver involvement evaluation</p>
+                        </div>
+                        <button class="next-button" onclick="goToStep(2)">Continue ➜</button>
+                    </div>
+
+                    <!-- Step 2: Resectable vs Unresectable -->
+                    <div class="flowchart-step hidden" id="step2">
+                        <div class="step-box decision">
+                            <h3>Is the liver disease resectable?</h3>
+                            <p>Can all metastases be removed with adequate liver remnant?</p>
+                        </div>
+                        <div class="button-group">
+                            <button class="option-button yes" onclick="showResult('resectable')">✓ Yes - Resectable</button>
+                            <button class="option-button no" onclick="goToStep(3)">✗ No - Unresectable</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Unresectable - Extrahepatic Disease -->
+                    <div class="flowchart-step hidden" id="step3">
+                        <div class="step-box decision">
+                            <h3>Any extrahepatic metastases?</h3>
+                            <p>Lung, peritoneal, or other distant disease?</p>
+                        </div>
+                        <div class="button-group">
+                            <button class="option-button yes" onclick="showResult('extrahepatic')">✓ Yes - Extrahepatic</button>
+                            <button class="option-button no" onclick="goToStep(4)">✗ No - Hepatic only</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Calculate Oslo Score -->
+                    <div class="flowchart-step hidden" id="step4">
+                        <div class="step-box action">
+                            <h3>Calculate Oslo Score</h3>
+                            <p>Use the Oslo Score calculator in the Tools section</p>
+                            <p><strong>Components:</strong></p>
+                            <ul>
+                                <li>Age > 60 years: 1 point</li>
+                                <li>ASA score ≥ 3: 1 point</li>
+                                <li>Tumor size > 5 cm: 1 point</li>
+                                <li>Bilobar disease: 1 point</li>
+                                <li>Extrahepatic disease: 2 points</li>
+                            </ul>
+                        </div>
+                        <div class="input-group">
+                            <label for="osloScore">Enter Oslo Score (0-6):</label>
+                            <input type="number" id="osloScore" min="0" max="6" placeholder="0">
+                            <button class="next-button" onclick="evaluateOsloScore()">Evaluate ➜</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Oslo Score Interpretation -->
+                    <div class="flowchart-step hidden" id="step5">
+                        <div class="step-box decision">
+                            <h3>Oslo Score Interpretation</h3>
+                            <p id="osloInterpretation"></p>
+                        </div>
+                        <button class="next-button" onclick="goToStep(6)">Continue ➜</button>
+                    </div>
+
+                    <!-- Step 6: FCRS Evaluation -->
+                    <div class="flowchart-step hidden" id="step6">
+                        <div class="step-box action">
+                            <h3>Calculate Fong Clinical Risk Score</h3>
+                            <p>Use the FCRS calculator in the Tools section</p>
+                            <p><strong>Components:</strong></p>
+                            <ul>
+                                <li>CEA > 200 ng/mL: 1 point</li>
+                                <li>Number of tumors > 1: 1 point</li>
+                                <li>Size of largest tumor > 5 cm: 1 point</li>
+                                <li>Lymph node metastases: 1 point</li>
+                                <li>Disease-free interval < 12 months: 1 point</li>
+                            </ul>
+                        </div>
+                        <div class="input-group">
+                            <label for="fcrsScore">Enter FCRS (0-5):</label>
+                            <input type="number" id="fcrsScore" min="0" max="5" placeholder="0">
+                            <button class="next-button" onclick="goToStep(7)">Continue ➜</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 7: PET-MTV Assessment -->
+                    <div class="flowchart-step hidden" id="step7">
+                        <div class="step-box action">
+                            <h3>PET-MTV Assessment</h3>
+                            <p>Metabolic tumor volume from PET-CT imaging</p>
+                        </div>
+                        <div class="button-group">
+                            <button class="option-button yes" onclick="setPETMTV('low')">✓ PET-MTV < 70 cm³ (Favorable)</button>
+                            <button class="option-button no" onclick="setPETMTV('high')">✗ PET-MTV ≥ 70 cm³ (Unfavorable)</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 8: Molecular Factors -->
+                    <div class="flowchart-step hidden" id="step8">
+                        <div class="step-box action">
+                            <h3>Molecular Profiling</h3>
+                            <p>Tumor genetic characteristics</p>
+                        </div>
+                        <div class="button-group">
+                            <button class="option-button yes" onclick="setMolecular('favorable')">✓ RAS/TP53 Wild-type (Favorable)</button>
+                            <button class="option-button no" onclick="setMolecular('unfavorable')">✗ RAS/TP53 Co-mutation (Unfavorable)</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 9: Exclusion Criteria -->
+                    <div class="flowchart-step hidden" id="step9">
+                        <div class="step-box decision">
+                            <h3>Check Exclusion Criteria</h3>
+                            <p>Does the patient have any of these?</p>
+                            <ul>
+                                <li>Uncontrolled primary tumor</li>
+                                <li>Significant cardiopulmonary disease</li>
+                                <li>Active infection or sepsis</li>
+                                <li>Severe renal or hepatic dysfunction</li>
+                                <li>Psychiatric contraindication</li>
+                                <li>Poor compliance expected</li>
+                                <li>Limited life expectancy from other causes</li>
+                            </ul>
+                        </div>
+                        <div class="button-group">
+                            <button class="option-button yes" onclick="showResult('excluded')">✓ Yes - Has exclusion criteria</button>
+                            <button class="option-button no" onclick="goToStep(10)">✗ No - No exclusions</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 10: Final Recommendation -->
+                    <div class="flowchart-step hidden" id="step10">
+                        <div class="step-box action">
+                            <h3>Final Assessment</h3>
+                            <p>Multidisciplinary Team Discussion</p>
+                        </div>
+                        <button class="next-button" onclick="generateReport()">Generate Report ➜</button>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="flowchart-step hidden" id="resultResectable">
+                        <div class="step-box result favorable">
+                            <h3>✓ Resectable Disease</h3>
+                            <p>This patient is a candidate for hepatic resection. LT is not indicated for resectable disease.</p>
+                            <p><strong>Recommendation:</strong> Proceed with surgical resection by experienced hepatobiliary surgeon.</p>
+                            <button class="reset-button" onclick="resetFlowchart()">Start Over</button>
+                        </div>
+                    </div>
+
+                    <div class="flowchart-step hidden" id="resultExtrahepatic">
+                        <div class="step-box result unfavorable">
+                            <h3>✗ Extrahepatic Metastases</h3>
+                            <p>Presence of extrahepatic disease is a relative contraindication to LT.</p>
+                            <p><strong>Recommendation:</strong> Consider chemotherapy or locoregional therapy. Discuss with transplant team if disease can be controlled.</p>
+                            <button class="reset-button" onclick="resetFlowchart()">Start Over</button>
+                        </div>
+                    </div>
+
+                    <div class="flowchart-step hidden" id="resultExcluded">
+                        <div class="step-box result unfavorable">
+                            <h3>✗ Exclusion Criteria Present</h3>
+                            <p>This patient does not meet criteria for liver transplantation.</p>
+                            <p><strong>Recommendation:</strong> Continue palliative chemotherapy. Reassess if exclusion criteria are resolved.</p>
+                            <button class="reset-button" onclick="resetFlowchart()">Start Over</button>
+                        </div>
+                    </div>
+
+                    <div class="flowchart-step hidden" id="resultReport">
+                        <div class="step-box result favorable">
+                            <h3>✓ Potential Candidate for LT</h3>
+                            <p id="reportContent"></p>
+                            <button class="reset-button" onclick="resetFlowchart()">Start Over</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Summary Table -->
+            <section class="section">
+                <h2>Quick Reference: Risk Stratification</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Risk Factor</th>
+                            <th>Favorable</th>
+                            <th>Unfavorable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Oslo Score</strong></td>
+                            <td>0-1 (88.9% 10-yr OS)</td>
+                            <td>3-4 (11.7% 10-yr OS)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PET-MTV</strong></td>
+                            <td>&lt; 70 cm³</td>
+                            <td>≥ 70 cm³</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Molecular</strong></td>
+                            <td>RAS/TP53 WT</td>
+                            <td>RAS/TP53 Co-mut</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FCRS</strong></td>
+                            <td>0-2 (Low risk)</td>
+                            <td>3-5 (High risk)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Age</strong></td>
+                            <td>&lt; 60 years</td>
+                            <td>≥ 60 years</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="call-to-action">
+                <h2>Next Steps</h2>
+                <p>If the patient appears to be a potential candidate, proceed with:</p>
+                <ol>
+                    <li>Comprehensive multidisciplinary team evaluation</li>
+                    <li>Detailed imaging assessment (CT, MRI, PET-CT)</li>
+                    <li>Functional assessment and comorbidity evaluation</li>
+                    <li>Psychosocial evaluation</li>
+                    <li>Formal transplant candidacy assessment</li>
+                </ol>
+                <a href="selection-criteria.html" class="cta-button">View Detailed Selection Criteria</a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CRLM LT Clinical Resource. Evidence-based information for transplant teams.</p>
+            <p class="author"><strong>Created by:</strong> Tor Magnus Smedman, MD PhD | Transplant Oncology Research Group, Oslo University Hospital</p>
+            <p class="disclaimer">This resource is for educational purposes. Clinical decisions should be made in consultation with a multidisciplinary team.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+            
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+        }
+
+        // Flowchart Logic
+        let patientData = {
+            osloScore: null,
+            fcrsScore: null,
+            petMTV: null,
+            molecular: null
+        };
+
+        function goToStep(stepNumber) {
+            document.querySelectorAll('.flowchart-step').forEach(step => {
+                step.classList.add('hidden');
+            });
+            document.getElementById('step' + stepNumber).classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function evaluateOsloScore() {
+            const score = parseInt(document.getElementById('osloScore').value);
+            patientData.osloScore = score;
+            
+            let interpretation = '';
+            if (score <= 1) {
+                interpretation = 'Oslo Score 0-1 (Favorable): Excellent candidate for LT with 88.9% 10-year survival';
+            } else if (score === 2) {
+                interpretation = 'Oslo Score 2 (Intermediate): Moderate candidate for LT with 55.2% 10-year survival';
+            } else {
+                interpretation = 'Oslo Score 3-4 (Unfavorable): Poor candidate for LT with 11.7% 10-year survival. Consider chemotherapy.';
+            }
+            
+            document.getElementById('osloInterpretation').textContent = interpretation;
+            goToStep(5);
+        }
+
+        function setPETMTV(value) {
+            patientData.petMTV = value;
+            goToStep(8);
+        }
+
+        function setMolecular(value) {
+            patientData.molecular = value;
+            goToStep(9);
+        }
+
+        function showResult(resultType) {
+            document.querySelectorAll('.flowchart-step').forEach(step => {
+                step.classList.add('hidden');
+            });
+            document.getElementById('result' + resultType.charAt(0).toUpperCase() + resultType.slice(1)).classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function generateReport() {
+            let report = '<strong>Patient Evaluation Summary:</strong><br>';
+            report += 'Oslo Score: ' + patientData.osloScore + '<br>';
+            report += 'PET-MTV: ' + patientData.petMTV + '<br>';
+            report += 'Molecular: ' + patientData.molecular + '<br>';
+            report += '<br><strong>Recommendation:</strong> This patient appears to be a potential candidate for liver transplantation. Proceed with comprehensive multidisciplinary evaluation.';
+            
+            document.getElementById('reportContent').innerHTML = report;
+            showResult('Report');
+        }
+
+        function resetFlowchart() {
+            patientData = { osloScore: null, fcrsScore: null, petMTV: null, molecular: null };
+            goToStep(1);
+        }
+    </script>
+</body>
+</html>

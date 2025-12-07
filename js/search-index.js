@@ -170,3 +170,24 @@ const researchGroupContent = [
 
 // Merge with existing search index
 searchIndex.push(...researchGroupContent);
+
+// Add Kaplan-Meier curves and new pages to search index
+const newPagesContent = [
+    { title: "Kaplan-Meier Survival Curves", category: "Survival Curves", preview: "Interactive survival curves showing outcomes by Oslo Score, LT vs chemotherapy, and PET-MTV", url: "pages/survival-curves.html" },
+    { title: "Overall Survival by Oslo Score", category: "Survival Curves", preview: "Survival outcomes stratified by Oslo Score risk groups with 10-year follow-up data", url: "pages/survival-curves.html" },
+    { title: "LT vs Chemotherapy Survival", category: "Survival Curves", preview: "TransMet trial results comparing liver transplantation plus chemotherapy vs chemotherapy alone", url: "pages/survival-curves.html" },
+    { title: "Disease-Free Survival", category: "Survival Curves", preview: "Disease-free survival patterns after liver transplantation showing recurrence timeline", url: "pages/survival-curves.html" },
+    { title: "PET-MTV Survival Curves", category: "Survival Curves", preview: "Overall survival stratified by metabolic tumor volume from PET-CT imaging", url: "pages/survival-curves.html" },
+    { title: "PDF Resources", category: "PDF Resources", preview: "Downloadable clinical guides, calculators, and reference materials for CRLM LT", url: "pages/pdf-resources.html" },
+    { title: "Quick Reference Guide", category: "PDF Resources", preview: "One-page summary of key decision points for CRLM LT evaluation", url: "pages/pdf-resources.html" },
+    { title: "Comprehensive Clinical Guide", category: "PDF Resources", preview: "Complete reference manual for CRLM liver transplantation with all evidence", url: "pages/pdf-resources.html" },
+    { title: "Oslo Score Calculator PDF", category: "PDF Resources", preview: "Printable worksheet for calculating and interpreting Oslo Score", url: "pages/pdf-resources.html" },
+    { title: "Patient Information Sheet", category: "PDF Resources", preview: "Patient-friendly explanation of CRLM and liver transplantation process", url: "pages/pdf-resources.html" },
+    { title: "Patient Selection Flowchart", category: "Patient Flowchart", preview: "Interactive step-by-step guide for evaluating candidates for liver transplantation", url: "pages/patient-flowchart.html" },
+    { title: "Patient Evaluation Steps", category: "Patient Flowchart", preview: "Systematic evaluation process including Oslo Score, FCRS, PET-MTV, and exclusion criteria", url: "pages/patient-flowchart.html" },
+    { title: "Exclusion Criteria Assessment", category: "Patient Flowchart", preview: "Check for contraindications to liver transplantation in CRLM patients", url: "pages/patient-flowchart.html" },
+    { title: "Risk Stratification", category: "Patient Flowchart", preview: "Quick reference table for favorable vs unfavorable prognostic factors", url: "pages/patient-flowchart.html" }
+];
+
+// Merge with existing search index
+searchIndex.push(...newPagesContent);
